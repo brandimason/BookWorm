@@ -1,11 +1,17 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, sessionmaker
 from models import (Base, User, Book, Book_Read)
 
 if __name__ == "__main__":
 
     engine = create_engine('sqlite:///book.db')
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    # do i need this ^ if i am using what's below: the Base.metadata
     Base.metadata.create_all(engine)
+
+    session.query(Book).delete()
+    session.query(User).delete()
 
     with Session(engine) as session:
         #books
