@@ -12,7 +12,7 @@ class User(Base):
     firstname = Column(String)
     lastname = Column(String)
     
-    books_read = relationship('Book_Read', backref=('user'))
+    # books= relationship('Book', secondary="books_read", backref='users')
 
 class Book(Base):
 
@@ -22,7 +22,11 @@ class Book(Base):
     title = Column(String)
     author = Column(String)
 
-    books_read = relationship('Book_Read', backref=('book'))
+    def __repr__(self):
+        return f"\n \
+            The book '{self.title}' was written by the author {self.author}."
+
+    # users = relationship('User', secondary="books_read", backref='books')
 
 class Book_Read(Base):
     
@@ -30,6 +34,9 @@ class Book_Read(Base):
 
     id = Column(Integer, primary_key=True)
     book_id = Column(Integer, ForeignKey('books.id'))
+    books = relationship("Book", backref="books_read")
     user_id = Column(Integer, ForeignKey('users.id'))
+    users = relationship("User", backref="books_read")
+
 
 
