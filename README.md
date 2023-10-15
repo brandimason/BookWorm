@@ -1,4 +1,4 @@
-# BookWorm
+# BookWorm  :books::bug:
 
 Welcome to BookWorm, a literary app that helps track progress towards and achieve literary goals built with Python and SQLite. 
 
