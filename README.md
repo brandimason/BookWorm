@@ -11,3 +11,4 @@ Welcome to BookWorm, a literary app that helps track progress towards and achiev
 3. Run `pipenv install` to install dependencies 
 4. Run `pipenv shell` to create virtual environment
 5. From the project directory, run `python3 lib/seed.py` to populate the database with puzzles
+
