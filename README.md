@@ -20,7 +20,7 @@ Welcome to BookWorm, a literary app that helps track progress towards and achiev
 
 ## Use 
 Ready to add a book? Here's how to get started: 
-1. From the project directory, run `python cli.py`
+1. From the project directory, run `python lib/cli.py`
 2. Enter a number 1-4 from the menu. Start with 1 to register as a new player. 
 3. Follow the resulting prompts
 4. Type `"3"` or `"exit"` to end the program
